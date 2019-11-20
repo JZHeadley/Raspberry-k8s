@@ -1,0 +1,13 @@
+- hosts: pi-k8s
+  become: yes
+  tasks:
+    # - name: Upgrade all packages to the latest version
+    #   apt:
+    #     name: "*"
+    #     state: latest
+
+    - name: Install Kubeadm
+      become: true
+      apt:
+        name: kubeadm
+        update_cache: yes
