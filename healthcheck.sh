@@ -1,6 +1,6 @@
 while true
 do
-    curl -w "%{time_total}\n" -so /dev/null  http://localhost:9090
+    curl -w "%{time_total}\n" -so /dev/null  http://localhost:8080
     #date
-    sleep 20
+    sleep 1
 done

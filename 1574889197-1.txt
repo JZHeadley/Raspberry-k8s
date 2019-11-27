@@ -1,0 +1,60 @@
+b'0.073094'
+b'0.050246'
+b'0.078804'
+b'0.047521'
+b'0.040327'
+b'0.158977'
+b'0.040442'
+b'0.045973'
+b'0.066585'
+b'0.086250'
+b'0.048124'
+b'0.069902'
+b'0.079923'
+b'0.095414'
+b'0.042376'
+b'0.059042'
+b'0.065997'
+b'0.060752'
+b'0.059216'
+b'0.080284'
+b'0.088667'
+b'0.039942'
+b'0.038478'
+b'0.048974'
+b'0.046200'
+b'0.044191'
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 52.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 52.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 52.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 52.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 56.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 52.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 52.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 52.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 52.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 52.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 56.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 56.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 56.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
+Command 'curl -w '%{time_total}' -so /dev/null http://localhost:8080' returned non-zero exit status 7.
