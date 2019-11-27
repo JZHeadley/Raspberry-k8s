@@ -25,7 +25,7 @@ def main(PINGINTERVAL=2, RUNTIME=1):
 
         os.system("docker kill chaoskube")
 
-        with open(f"{(int(time())}-{interval}.txt","w") as outFile:
+        with open(f"{int(time())}-{interval}.txt","w") as outFile:
             outFile.writelines(results)
             
             
