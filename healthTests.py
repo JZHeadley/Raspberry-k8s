@@ -5,10 +5,10 @@ from time import sleep, time
 
 def main(PINGINTERVAL=1, RUNTIME=1):
     ChaosIntervals = (
-#        "15",
-#        "10",
-#        "5",
-#        "2",
+        "15",
+        "10",
+        "5",
+        "2",
         "1"
     )
     
