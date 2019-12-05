@@ -1,7 +1,7 @@
 #Simple Script to run chaos cube 
 import os, subprocess, signal, time
 from time import sleep, time
-
+from pprint import pprint
 
 def main(PINGINTERVAL=1, RUNTIME=1):
     ChaosIntervals = (
@@ -49,6 +49,9 @@ def main(PINGINTERVAL=1, RUNTIME=1):
             print(outMessage)
             if runCube:
                 sleep(30)
+
+    print("Resutlts: ")
+    pprint(fullResults)
 
     for i,v in enumerate(ChaosIntervals):
         fName = f"results/{(int(time()))}-{v}.txt"
