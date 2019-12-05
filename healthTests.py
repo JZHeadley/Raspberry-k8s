@@ -53,8 +53,7 @@ def main(PINGINTERVAL=1, RUNTIME=10, RUNS=1):
         fName = f"results/{(int(time()))}-{interval}.txt"
         with open(fName,"w") as outFile:
             for row in zip(*fullSet):
-                result = f"{(sum(row)/len(row)):.6f}\n"
-                outFile.write(result)
+                outFile.write(f"{(sum(row)/len(row)):.6f}\n")
         print(f"{fName} Written!")
 
     print("Work complete!")
