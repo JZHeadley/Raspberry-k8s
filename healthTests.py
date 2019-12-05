@@ -6,10 +6,10 @@ from time import sleep, time
 def main(PINGINTERVAL=1, RUNTIME=1):
     ChaosIntervals = (
         "baseline",
-        "15",
-        "10",
-        "5",
-        "2",
+        # "15",
+        # "10",
+        # "5",
+        # "2",
         "1",
     )
     
@@ -53,8 +53,11 @@ def main(PINGINTERVAL=1, RUNTIME=1):
     for i,v in enumerate(ChaosIntervals):
         fName = f"results/{(int(time()))}-{v}.txt"
         with open(fName,"w") as outFile:
+            print(f"Writing results for {fName}")
             for row in zip(*fullResults[i]):
-                outFile.write(f"{(sum(row)/len(row)):.6f}\n")
+                result = f"{(sum(row)/len(row)):.6f}\n"
+                print(result[:-1])
+                outFile.write(result)
         print(f"{fName} Written!")
 
     print("Work complete!")
