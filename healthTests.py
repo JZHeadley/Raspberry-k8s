@@ -2,6 +2,7 @@
 import os, subprocess, signal, time
 from time import sleep, time
 from pprint import pprint
+from statistics import median
 
 def main(PINGINTERVAL=1, RUNTIME=60, RUNS=20):
     ChaosIntervals = (
@@ -50,12 +51,15 @@ def main(PINGINTERVAL=1, RUNTIME=60, RUNS=20):
             if runCube:
                 sleep(30)
 
-        fName = f"results/{(int(time()))}-{interval}.txt"
-        with open(fName,"w") as outFile:
+        fName = f"results/{(int(time()))}-{interval}"
+        fNameAvg = fName+"_avg.txt"
+        fNameMed = fName+"_med.txt"
+        with open(fNameAvg,"w") as outAvg, open(fNameMed,"w") as outMed:
             for row in zip(*fullSet):
-                outFile.write(f"{(sum(row)/len(row)):.6f}\n")
+                outAvg.write(f"{(sum(row)/len(row)):.6f}\n")
+                outMed,write(f"{(median(row)):.6f}\n")
         print(f"{fName} Written!")
-
+        
     print("Work complete!")
             
 if __name__ == "__main__":
