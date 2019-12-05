@@ -3,7 +3,7 @@ import os, subprocess, signal, time
 from time import sleep, time
 from pprint import pprint
 
-def main(PINGINTERVAL=1, RUNTIME=1):
+def main(PINGINTERVAL=1, RUNTIME=10, RUNS=1):
     ChaosIntervals = (
         "baseline",
         # "15",
@@ -13,13 +13,13 @@ def main(PINGINTERVAL=1, RUNTIME=1):
         "1",
     )
     
-    RUNTIME = (RUNTIME*10)//PINGINTERVAL
-    fullResults = [list() for i in range(len(ChaosIntervals))]
+    RUNTIME = RUNTIME//PINGINTERVAL
 
-    for test in range(2):
-        for interval in ChaosIntervals:
+    for interval in ChaosIntervals:
+        fullSet = []
+        for i in range(RUNS):
             results = []
-            fullResults.append(results)
+            fullSet.append(results)
             runCube = interval != "baseline"
             if runCube:
                 startCube = f"docker run --rm --name=chaoskube -v /home/jzheadley/.kube/config:/kube/config quay.io/linki/chaoskube:latest  --kubeconfig=/kube/config --namespaces=default --no-dry-run --interval={interval}s"
@@ -33,10 +33,10 @@ def main(PINGINTERVAL=1, RUNTIME=1):
             for i in range(RUNTIME):
                 print(f"Ping {i+1} of {RUNTIME}")
                 try:
-                    results.append(subprocess.check_output("curl -w '%{time_total}' -so /dev/null http://192.168.1.50:8069",shell=True).decode("utf-8")+"\n")
+                    results.append(float(subprocess.check_output("curl -w '%{time_total}' -so /dev/null http://192.168.1.50:8069",shell=True).decode("utf-8")))
                 except Exception as e:
                     print("ERROR! "+str(e))
-                    results.append(str(e)+"\n")
+                    results.append(2.0)
                 finally:
                     sleep(PINGINTERVAL)
 
@@ -50,16 +50,10 @@ def main(PINGINTERVAL=1, RUNTIME=1):
             if runCube:
                 sleep(30)
 
-    print("Resutlts: ")
-    pprint(fullResults)
-
-    for i,v in enumerate(ChaosIntervals):
-        fName = f"results/{(int(time()))}-{v}.txt"
+        fName = f"results/{(int(time()))}-{interval}.txt"
         with open(fName,"w") as outFile:
-            print(f"Writing results for {fName}")
-            for row in zip(*fullResults[i]):
+            for row in zip(*fullSet):
                 result = f"{(sum(row)/len(row)):.6f}\n"
-                print(result[:-1])
                 outFile.write(result)
         print(f"{fName} Written!")
 
