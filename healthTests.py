@@ -50,7 +50,7 @@ def main(PINGINTERVAL=1, RUNTIME=1):
             if runCube:
                 sleep(30)
 
-    for i,v in ChaosIntervals:
+    for i,v in enumerate(ChaosIntervals):
         fName = f"results/{(int(time()))}-{v}.txt"
         with open(fName,"w") as outFile:
             for row in zip(*fullResults[i]):
