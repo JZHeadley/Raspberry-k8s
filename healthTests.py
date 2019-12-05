@@ -4,7 +4,7 @@ from time import sleep, time
 from pprint import pprint
 from statistics import median
 
-def main(PINGINTERVAL=1, RUNTIME=60, RUNS=20):
+def main(PINGINTERVAL=1, RUNTIME=60, RUNS=40):
     ChaosIntervals = (
         "baseline",
         "15",
@@ -59,7 +59,7 @@ def main(PINGINTERVAL=1, RUNTIME=60, RUNS=20):
                 outAvg.write(f"{(sum(row)/len(row)):.6f}\n")
                 outMed,write(f"{(median(row)):.6f}\n")
         print(f"{fName} Written!")
-        
+
     print("Work complete!")
             
 if __name__ == "__main__":
