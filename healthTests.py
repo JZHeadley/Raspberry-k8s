@@ -33,7 +33,7 @@ def main(PINGINTERVAL=1, RUNTIME=1):
             for i in range(RUNTIME):
                 print(f"Ping {i+1} of {RUNTIME}")
                 try:
-                    results.append(subprocess.check_output("curl -w '%{time_total}' -so /dev/null http://localhost:8080",shell=True).decode("utf-8")+"\n")
+                    results.append(subprocess.check_output("curl -w '%{time_total}' -so /dev/null http://192.168.1.50:8069",shell=True).decode("utf-8")+"\n")
                 except Exception as e:
                     print("ERROR! "+str(e))
                     results.append(str(e)+"\n")
@@ -47,9 +47,11 @@ def main(PINGINTERVAL=1, RUNTIME=1):
                 outMessage = f"Ping Test for baseline Done!"
 
             print(outMessage)
+            if runCube:
+                sleep(30)
 
     for i,v in ChaosIntervals:
-        fName = f"{(int(time()))}-{v}.txt"
+        fName = f"results/{(int(time()))}-{v}.txt"
         with open(fName,"w") as outFile:
             for row in zip(*fullResults[i]):
                 outFile.write(f"{(sum(row)/len(row)):.6f}\n")
