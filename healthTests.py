@@ -3,13 +3,13 @@ import os, subprocess, signal, time
 from time import sleep, time
 from pprint import pprint
 
-def main(PINGINTERVAL=1, RUNTIME=10, RUNS=3):
+def main(PINGINTERVAL=1, RUNTIME=60, RUNS=20):
     ChaosIntervals = (
         "baseline",
-        # "15",
-        # "10",
-        # "5",
-        # "2",
+        "15",
+        "10",
+        "5",
+        "2",
         "1",
     )
     
