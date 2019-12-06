@@ -34,10 +34,10 @@ def main(PINGINTERVAL=1, RUNTIME=60, RUNS=40):
             for i in range(RUNTIME):
                 print(f"Ping {i+1} of {RUNTIME}")
                 try:
-                    results.append(float(subprocess.check_output("curl -w '%{time_total}' -so /dev/null http://192.168.1.50:8069",shell=True).decode("utf-8")))
+                    results.append(subprocess.check_output("curl -w '%{time_total}' -so /dev/null http://192.168.1.50:8069",shell=True).decode("utf-8"))
                 except Exception as e:
                     print("ERROR! "+str(e))
-                    results.append(2.0)
+                    results.append("2.0")
                 finally:
                     sleep(PINGINTERVAL)
 
@@ -51,13 +51,10 @@ def main(PINGINTERVAL=1, RUNTIME=60, RUNS=40):
             if runCube:
                 sleep(30)
 
-        fName = f"results/{(int(time()))}-{interval}"
-        fNameAvg = fName+"_avg.txt"
-        fNameMed = fName+"_med.txt"
-        with open(fNameAvg,"w") as outAvg, open(fNameMed,"w") as outMed:
+        fName = f"results/{interval}_{(int(time()))}.txt"
+        with open(fName,"w") as outFile:
             for row in zip(*fullSet):
-                outAvg.write(f"{(sum(row)/len(row)):.6f}\n")
-                outMed,write(f"{(median(row)):.6f}\n")
+                outFile.write(",".join(row)+"\n")
         print(f"{fName} Written!")
 
     print("Work complete!")
