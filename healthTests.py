@@ -6,11 +6,11 @@ from statistics import median
 
 def main(PINGINTERVAL=1, RUNTIME=60, RUNS=40):
     ChaosIntervals = (
-        "baseline",
-        "15",
-        "10",
-        "5",
-        "2",
+        # "baseline",
+        # "15",
+        # "10",
+        # "5",
+        # "2",
         "1",
     )
     
