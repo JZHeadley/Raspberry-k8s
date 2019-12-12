@@ -37,3 +37,13 @@ sudo cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 sudo chown $(id -u):$(id -g) $HOME/.kube/config
 ```
 At this point there should be a fully working cluster and running `kubectl get nodes` should return you a list of your nodes and their statuses.
+
+### Nginx
+To test everything by deploying a few Nginx pods and exposing them with a service the following can be done:
+```bash
+kubectl apply -f ./nginx.yaml # creates the nginx deployment
+kubectl apply -f ./nginx-svc.yaml # creates the load balancing service to expose the deployment 
+kubectl patch svc nginx -n default -p '{"spec": {"type": "LoadBalancer", "externalIPs":["192.168.1.50"]}}' # this was needed locally in my installation in order to expose the service inside my local network
+```
+
+At this point there will be an nginx deployment with replicas with a load balancing service over top of them exposing them on http://192.168.1.50:8069
